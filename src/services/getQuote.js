@@ -1,4 +1,4 @@
-export const getQuotes = (count = 3) => {
+export const getQuotes = (count = 15) => {
   return fetch(`https://futuramaapi.herokuapp.com/api/quotes/${count}`)
     .then(res => ([res.ok, res.json()]))
     .then(([ok, json]) => {
