@@ -1,0 +1,7 @@
+.Quotes {
+  border: 1px solid black;
+  text-decoration: none;
+  display: flex;
+  flex-wrap: wrap;
+
+}

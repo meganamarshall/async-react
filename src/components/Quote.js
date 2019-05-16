@@ -1,9 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import styles from './Quote.css';
 
 function Quote({ quote }) {
   return (
-    <section>
+    <section classList={styles.Quote}>
       <p>{quote.character}</p>
       <p>{quote.quote}</p>
       <img src={quote.image} />
