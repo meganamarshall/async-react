@@ -3,11 +3,11 @@ import PropTypes from 'prop-types';
 
 function Quote({ quote }) {
   return (
-    <>
-    <p>{quote.character}</p>
-    <p>{quote.quote}</p>
-    <img src={quote.image} />
-    </> 
+    <section>
+      <p>{quote.character}</p>
+      <p>{quote.quote}</p>
+      <img src={quote.image} />
+    </section> 
   );
 }
 
@@ -16,7 +16,7 @@ Quote.propTypes = {
     character: PropTypes.string.isRequired,
     quote: PropTypes.string.isRequired,
     image: PropTypes.string.isRequired
-  })
+  }).isRequired
 };
 
 export default Quote;
