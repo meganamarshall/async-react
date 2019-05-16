@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react';
 import Characters from '../components/Characters';
-import getCharacters from '../services/rickAndMortyApi';
+import { getCharacters } from '../services/rickAndMortyApi';
 
 export default class AllCharacters extends PureComponent {
   state = {
@@ -18,6 +18,6 @@ export default class AllCharacters extends PureComponent {
 
   render() {
     const { characters } = this.state;
-    return <Characters characters={characters} />
+    return <Characters characters={characters} />;
   }
 }
