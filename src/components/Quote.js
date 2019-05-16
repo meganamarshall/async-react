@@ -12,7 +12,7 @@ function Quote({ quote }) {
 }
 
 Quote.propTypes = {
-  quote: PropTypes.arrayOf.shape({
+  quote: PropTypes.shape({
     character: PropTypes.string.isRequired,
     quote: PropTypes.string.isRequired,
     img: PropTypes.string.isRequired
