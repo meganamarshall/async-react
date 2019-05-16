@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react';
-import PropTypes from 'prop-types';
 import Characters from '../components/Characters';
+import getCharacters from '../services/rickAndMortyApi';
 
 export default class AllCharacters extends PureComponent {
   state = {
@@ -8,6 +8,16 @@ export default class AllCharacters extends PureComponent {
   }
 
   fetchCharacters = () => {
-    
+    getCharacters()
+      .then(characters => this.setState({ characters }));
+  }
+
+  componentDidMount() {
+    this.fetchCharacters();
+  }
+
+  render() {
+    const { characters } = this.state;
+    return <Characters characters={characters} />
   }
 }
