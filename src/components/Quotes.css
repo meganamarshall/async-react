@@ -4,4 +4,13 @@
   display: flex;
   flex-wrap: wrap;
 
+  li {
+    border: 1px solid black;
+    width: 20vw;
+    list-style-type: none;
+  }
+
+  img {
+    height: 10rem;
+  }
 }
