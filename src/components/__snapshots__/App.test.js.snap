@@ -1,3 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`app component renders the app 1`] = `<TopQuotes />`;
+exports[`app component renders the app 1`] = `
+<TopQuotes
+  count={3}
+/>
+`;

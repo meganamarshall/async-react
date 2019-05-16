@@ -6,7 +6,7 @@ function Quote({ quote }) {
     <>
     <p>{quote.character}</p>
     <p>{quote.quote}</p>
-    <img src={quote.img} />
+    <img src={quote.image} />
     </> 
   );
 }
@@ -15,7 +15,7 @@ Quote.propTypes = {
   quote: PropTypes.shape({
     character: PropTypes.string.isRequired,
     quote: PropTypes.string.isRequired,
-    img: PropTypes.string.isRequired
+    image: PropTypes.string.isRequired
   })
 };
 
