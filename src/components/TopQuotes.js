@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react';
 import Quotes from './Quotes';
-import getQuotes from '../services/getQuote';
+import { getQuotes } from '../services/getQuote';
 
 export default class TopQuotes extends PureComponent {
   state = {
