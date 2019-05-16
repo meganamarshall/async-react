@@ -1,20 +1,19 @@
-import React from 'react';
+import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import Quotes from './Quotes';
+import getQuotes from '../services/getQuote';
 
-function TopQuotes({ quotes, count, title }) {
-  return (
-    <section>
-      <h2>{title}</h2>
-      <Quotes quotes={quotes} />
-    </section>
-  );
+export default class TopQuotes extends PureComponent {
+  state = {
+    quotes: []
+  }
+
+  componentDidMount() {
+    getQuotes() 
+      .then(quotes => this.setState({ quotes }));
+  }
+  render() {
+    const { quotes } = this.state;
+    return <Quotes quotes={quotes} />;
+  }
 }
-
-TopQuotes.propTypes = {
-  title: PropTypes.string.isRequired,
-  quotes: PropTypes.array.isRequired,
-  count: PropTypes.number.isRequired
-};
-
-export default TopQuotes;
