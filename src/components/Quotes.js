@@ -21,3 +21,5 @@ function Quotes({ quotes }) {
 Quotes.propTypes = {
   quotes: PropTypes.array.isRequired
 };
+
+export default Quotes;
