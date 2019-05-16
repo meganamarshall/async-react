@@ -25,6 +25,12 @@ export default class TopQuotes extends PureComponent {
     this.fetchQuotes();
   }
 
+  componentDidUpdate(prevProps) {
+    if(prevProps.count !== this.props.count) {
+      this.fetchQuotes();
+    }
+  }
+
   render() {
     const { quotes } = this.state;
     return <Quotes quotes={quotes} />;
