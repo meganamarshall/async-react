@@ -11,8 +11,8 @@ exports[`character component renders the character 1`] = `
   <p>
     human
   </p>
-  <p>
-    telkjse.jpg
-  </p>
+  <img
+    src="telkjse.jpg"
+  />
 </section>
 `;
