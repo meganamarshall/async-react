@@ -1,16 +1,19 @@
 import React, { PureComponent } from 'react';
 import Characters from '../components/Characters';
+import Loading from '../components/Loading';
 import { getCharacters } from '../services/rickAndMortyApi';
 
 
 export default class AllCharacters extends PureComponent {
   state = {
-    characters: []
+    characters: [],
+    loading: true
   }
 
   fetchCharacters = () => {
+    this.setState({ loading: true })
     getCharacters()
-      .then(({ characters }) => this.setState({ characters }));
+      .then(({ characters }) => this.setState({ characters, loading: false }));
   }
 
   componentDidMount() {
@@ -18,7 +21,8 @@ export default class AllCharacters extends PureComponent {
   }
 
   render() {
-    const { characters } = this.state;
+    const { characters, loading } = this.state;
+    if(loading) return <Loading />
     return <Characters characters={characters} />;
   }
 }
