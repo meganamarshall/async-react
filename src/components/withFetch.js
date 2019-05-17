@@ -2,13 +2,14 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
 export const withFetch = (fetchFn, initialState, key = 'results') => Comp => {
-  class WithFetch {
+  class WithFetch extends Component {
     static propTypes = {
       page: PropTypes.number.isRequired
     }
   
     state = {
-      results: initialState
+      results: initialState,
+      loading: false
     }
 
     fetch = () => {
