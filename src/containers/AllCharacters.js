@@ -39,7 +39,6 @@ export default class AllCharacters extends PureComponent {
   }
 
   render() {
-    //console.log(this.state.currentPage);
     const { characters, loading, currentPage } = this.state;
     if(loading) return <Loading />;
     return (
