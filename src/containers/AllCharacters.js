@@ -1,24 +1,7 @@
-import React, { PureComponent } from 'react';
 import Characters from '../components/Characters';
 import { getCharacters } from '../services/rickAndMortyApi';
+import { withFetch } from '../containers/withFetch';
 
 
-export default class AllCharacters extends PureComponent {
-  state = {
-    characters: []
-  }
+export default withFetch(getCharacters, [], 'characters')(Characters);
 
-  fetchCharacters = () => {
-    getCharacters()
-      .then(({ characters }) => this.setState({ characters }));
-  }
-
-  componentDidMount() {
-    this.fetchCharacters();
-  }
-
-  render() {
-    const { characters } = this.state;
-    return <Characters characters={characters} />;
-  }
-}
