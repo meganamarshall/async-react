@@ -22,13 +22,18 @@ export default class AllCharacters extends PureComponent {
     this.fetchCharacters(this.currentPage);
   }
 
-  'https://cors-anywhere.herokuapp.com/https://rickandmortyapi.com/api/character/'
-
   previousButton() {
-    if(this.state.currentPage === this.state.totalPages) throw 'no more pages';
+    if(this.state.currentPage === 1) throw 'this is the first page';
     let thePage = this.state.currentPage;
     this.setState({ currentPage: thePage-- });
     this.fetchCharacters(this.currentPage - 1);
+  }
+
+  nextButton() {
+    if(this.state.currentPage === this.state.totalPages) throw 'no more pages';
+    let thePage = this.state.currentPage;
+    this.setState({ currentPage: thePage++ });
+    this.fetchCharacters(this.currentPage + 1);
   }
 
   render() {
@@ -36,8 +41,8 @@ export default class AllCharacters extends PureComponent {
     if(loading) return <Loading />;
     return (
     <>
-      <button onClick={() => previousButton()}>Previous Page</button>
-      <button>Next Page</button>
+      <button onClick={() => this.previousButton()}>Previous Page</button>
+      <button onClick={() => this.nextButton()}>Next Page</button>
       <Characters characters={characters} />
     </>
     );
