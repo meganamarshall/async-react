@@ -7,7 +7,7 @@ function Character({ character }) {
       <p>{character.name}</p>
       <p>{character.status}</p>
       <p>{character.species}</p>
-      <p>{character.image}</p>
+      <img src={character.image} />
     </section>
   );
 }
