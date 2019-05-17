@@ -1,5 +1,5 @@
 export const getCharacters = () => {
-  return fetch('https://rickandmortyapi.com/api/character/')
+  return fetch('https://cors-anywhere.herokuapp.com/https://rickandmortyapi.com/api/character/')
     .then(res => ([res.ok, res.json()]))
     .then(([ok, json]) => {
       if(!ok) throw 'Unable to fetch';
