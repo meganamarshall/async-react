@@ -7,6 +7,6 @@ exports[`app component renders the app 1`] = `
       RICK AND MORTY CHARACTERS
     </h1>
   </header>
-  <AllCharacters />
+  <[object Object] />
 </Fragment>
 `;
