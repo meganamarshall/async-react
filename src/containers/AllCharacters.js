@@ -27,7 +27,7 @@ export default class AllCharacters extends PureComponent {
     let thePage = currentPage;
     console.log(thePage);
     this.setState({ currentPage: thePage - 1 });
-    this.fetchCharacters(this.currentPage - 1);
+    this.fetchCharacters(currentPage);
   }
 
   nextButton(currentPage, totalPages) {
@@ -35,7 +35,7 @@ export default class AllCharacters extends PureComponent {
     let thePage = currentPage;
     console.log(thePage);
     this.setState({ currentPage: thePage + 1 });
-    this.fetchCharacters(this.currentPage + 1);
+    this.fetchCharacters(currentPage);
   }
 
   render() {
