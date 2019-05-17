@@ -4,8 +4,8 @@ import Character from './Character';
 import styles from './Characters.css';
 
 function Characters({ characters }) {
-  const characterList = characters.map(character => (
-    <li key={character.name}>
+  const characterList = characters.map((character, i) => (
+    <li key={i}>
       <Character character={character} />
     </li>
   ));
