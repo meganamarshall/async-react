@@ -9,7 +9,7 @@ export default class AllCharacters extends PureComponent {
     characters: [],
     loading: true,
     currentPage: 1,
-    totalPages: 1
+    totalPages: 25
   }
 
   fetchCharacters = currentPage => {
@@ -23,28 +23,29 @@ export default class AllCharacters extends PureComponent {
   }
 
   previousButton(currentPage) {
-    if(currentPage === 1) throw 'this is the first page';
-    let thePage = currentPage;
-    console.log(thePage);
-    this.setState({ currentPage: thePage - 1 });
-    this.fetchCharacters(currentPage);
+    if(currentPage - 1 === 0) {
+      throw 'this is the first page';
+    } else {
+      this.fetchCharacters(this.state.currentPage - 1);
+      this.setState({ currentPage: currentPage - 1 });
+    }
   }
 
-  nextButton(currentPage, totalPages) {
-    if(currentPage === totalPages) throw 'no more pages';
-    let thePage = currentPage;
-    console.log(thePage);
-    this.setState({ currentPage: thePage + 1 });
-    this.fetchCharacters(currentPage);
+  nextButton(currentPage) {
+    if(this.state.currentPage === this.state.totalPages) throw 'no more pages';
+    this.fetchCharacters(this.state.currentPage + 1);
+    this.setState({ currentPage: currentPage + 1 });
+    
   }
 
   render() {
-    const { characters, loading, currentPage, totalPages } = this.state;
+    //console.log(this.state.currentPage);
+    const { characters, loading, currentPage } = this.state;
     if(loading) return <Loading />;
     return (
     <>
       <button onClick={() => this.previousButton(currentPage)}>Previous Page</button>
-      <button onClick={() => this.nextButton(currentPage, totalPages)}>Next Page</button>
+      <button onClick={() => this.nextButton(currentPage)}>Next Page</button>
       <Characters characters={characters} />
     </>
     );
