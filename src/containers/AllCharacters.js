@@ -11,7 +11,7 @@ export default class AllCharacters extends PureComponent {
   }
 
   fetchCharacters = () => {
-    this.setState({ loading: true })
+    this.setState({ loading: true });
     getCharacters()
       .then(({ characters }) => this.setState({ characters, loading: false }));
   }
@@ -22,7 +22,7 @@ export default class AllCharacters extends PureComponent {
 
   render() {
     const { characters, loading } = this.state;
-    if(loading) return <Loading />
+    if(loading) return <Loading />;
     return <Characters characters={characters} />;
   }
 }
