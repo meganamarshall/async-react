@@ -9,7 +9,7 @@ export default class AllCharacters extends PureComponent {
 
   fetchCharacters = () => {
     getCharacters()
-      .then(characters => this.setState({ characters }));
+      .then(({ characters }) => this.setState({ characters }));
   }
 
   componentDidMount() {
