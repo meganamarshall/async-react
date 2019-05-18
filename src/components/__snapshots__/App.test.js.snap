@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`app component renders the app 1`] = `
+<Fragment>
+  <header>
+    <h1>
+      RICK AND MORTY CHARACTERS
+    </h1>
+  </header>
+  <WithFetch />
+</Fragment>
+`;
