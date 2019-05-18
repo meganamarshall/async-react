@@ -5,7 +5,7 @@ exports[`characters component renders the characters 1`] = `
   className="Characters"
 >
   <li
-    key="rick"
+    key="0"
   >
     <Character
       character={
@@ -19,7 +19,7 @@ exports[`characters component renders the characters 1`] = `
     />
   </li>
   <li
-    key="morty"
+    key="1"
   >
     <Character
       character={
