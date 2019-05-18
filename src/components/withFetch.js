@@ -3,7 +3,10 @@ import PropTypes from 'prop-types';
 
 export const withFetch = (fetchFn, initialState, key = 'results') => Comp => {
   class WithFetch extends Component {
-   
+    static propTypes = {
+      page: PropTypes.number
+    }
+
     state = {
       results: initialState,
       loading: false
@@ -11,12 +14,18 @@ export const withFetch = (fetchFn, initialState, key = 'results') => Comp => {
 
     fetch = () => {
       this.setState({ loading: true });
-      fetchFn() 
+      fetchFn(this.props.page) 
         .then(results => this.setState({ results, loading: false }));
     }
 
     componentDidMount() {
       this.fetch();
+    }
+
+    componentDidUpdate(prevProps) {
+      if(prevProps.page !== this.props.page) {
+        this.fetch();
+      }
     }
 
     render() {
