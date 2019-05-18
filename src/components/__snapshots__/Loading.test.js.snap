@@ -1,0 +1,7 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`loading component renders the loading message 1`] = `
+<h1>
+  Page is Loading. Wait a sec.
+</h1>
+`;
